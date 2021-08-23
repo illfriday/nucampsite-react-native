@@ -1,35 +1,20 @@
 import React, { Component } from "react";
-<<<<<<< Updated upstream
-import { View } from "react-native";
-import { CAMPSITES } from "../shared/campsites";
 import Directory from "./DirectoryComponent";
-
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      campsites: CAMPSITES,
-    };
-  }
-  render() {
-    return (
-      <View>
-        <Directory campsites={this.state.campsites} />
-=======
-import { View, Platform } from "react-native";
 import CampsiteInfo from "./CampsiteInfoComponent";
+import { View, Platform } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import Constants from "expo-constants";
-import Directory from "./DirectoryComponent";
 
 const DirectoryNavigator = createStackNavigator(
+
+  //Route Configs object, the only needed object in createStackNavigator
   {
     Directory: { screen: Directory },
     CampsiteInfo: { screen: CampsiteInfo },
   },
   {
-    initialRoute: "Directory",
+    initialRouteName: "Directory",
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: "#5637DD",
@@ -42,9 +27,10 @@ const DirectoryNavigator = createStackNavigator(
   }
 );
 
+//wrap TOP LEVEL NAVIGATOR in createAppContainer
 const AppNavigator = createAppContainer(DirectoryNavigator);
 
-export default class Main extends Component {
+class Main extends Component {
   render() {
     return (
       <View
@@ -54,8 +40,9 @@ export default class Main extends Component {
         }}
       >
         <AppNavigator />
->>>>>>> Stashed changes
       </View>
     );
   }
 }
+
+export default Main;
