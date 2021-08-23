@@ -1,7 +1,9 @@
+
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 import { Card } from "react-native-elements";
 import { CAMPSITES } from "../shared/campsites";
+
 
 function RenderCampsite({ campsite }) {
   if (campsite) {
@@ -16,6 +18,7 @@ function RenderCampsite({ campsite }) {
   }
   return <View />;
 }
+
 
 class CampsiteInfo extends Component {
   constructor(props) {
@@ -39,3 +42,4 @@ class CampsiteInfo extends Component {
 }
 
 export default CampsiteInfo;
+

@@ -6,6 +6,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import Constants from "expo-constants";
 
+
 const DirectoryNavigator = createStackNavigator(
 
   //Route Configs object, the only needed object in createStackNavigator
@@ -40,6 +41,7 @@ class Main extends Component {
         }}
       >
         <AppNavigator />
+
       </View>
     );
   }

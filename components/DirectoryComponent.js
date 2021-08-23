@@ -33,6 +33,7 @@ class Directory extends Component {
         data={this.state.campsites}
         renderItem={renderDirectoryItem}
         keyExtractor={(item) => item.id.toString()}
+
       />
     );
   }
