@@ -5,18 +5,20 @@ import { CAMPSITES } from "../shared/campsites";
 import { PARTNERS } from "../shared/partners";
 import { PROMOTIONS } from "../shared/promotions";
 
-function RenderItem({ item }) {
-  if (item) {
-    return (
-      <Card
-        featuredTitle={item.name}
-        image={require("./images/react-lake.jpg")}
-      >
-        <Text style={{ margin: 10 }}>{item.description}</Text>
-      </Card>
-    );
-  }
-  return <View />;
+function RenderItem({item}) {
+    if (item) {
+        return (
+            <Card
+                featuredTitle={item.name}
+                image={require('./images/react-lake.jpg')}
+            >
+                <Text style={{margin: 10}}>
+                    {item.description}
+                </Text>
+            </Card>
+        );
+    }
+    return <View />;
 }
 
 export default class Home extends Component {
