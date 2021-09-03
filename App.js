@@ -1,7 +1,11 @@
-import React from "react";
+import * as React from "react";
 import Main from "./components/MainComponent";
 export default function App() {
-  return <Main />;
+  return (
+
+      <Main />
+
+  );
 }
 
 // const styles = StyleSheet.create({
