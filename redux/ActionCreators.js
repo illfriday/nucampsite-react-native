@@ -164,6 +164,11 @@ export const addFavorite = (campsiteId) => ({
   payload: campsiteId,
 });
 
+export const deleteFavorite = (campsiteId) => ({
+  type: ActionTypes.DELETE_FAVORITE,
+  payload: campsiteId,
+});
+
 export const postComment = (campsiteId, rating, text, author) => (dispatch) => {
   const newComment = {
     campsiteId,
@@ -177,35 +182,35 @@ export const postComment = (campsiteId, rating, text, author) => (dispatch) => {
     dispatch(addComment(newComment));
   }, 2000);
 
-//   return fetch(baseUrl + "comments", {
-//     method: "POST",
-//     body: JSON.stringify(newComment),
-//     headers: {
-//       "Content-type": "application/json",
-//     },
-//   })
-//     .then(
-//       (response) => {
-//         if (response.ok) {
-//           return response;
-//         } else {
-//           const error = new Error(
-//             `Error ${response.status} ${response.statusText}`
-//           );
-//           error.response = response;
-//           throw error;
-//         }
-//       },
-//       (error) => {
-//         throw error;
-//       }
-//     )
-//     .then((response) => response.json())
-//     .then((response) => dispatch(addComment(response)))
-//     .catch((error) => {
-//       console.log("post comment", error.message);
-//       alert("Your comment could not be posted\nError: " + error.message);
-//     });
+  //   return fetch(baseUrl + "comments", {
+  //     method: "POST",
+  //     body: JSON.stringify(newComment),
+  //     headers: {
+  //       "Content-type": "application/json",
+  //     },
+  //   })
+  //     .then(
+  //       (response) => {
+  //         if (response.ok) {
+  //           return response;
+  //         } else {
+  //           const error = new Error(
+  //             `Error ${response.status} ${response.statusText}`
+  //           );
+  //           error.response = response;
+  //           throw error;
+  //         }
+  //       },
+  //       (error) => {
+  //         throw error;
+  //       }
+  //     )
+  //     .then((response) => response.json())
+  //     .then((response) => dispatch(addComment(response)))
+  //     .catch((error) => {
+  //       console.log("post comment", error.message);
+  //       alert("Your comment could not be posted\nError: " + error.message);
+  //     });
 };
 
 export const addComment = (comment) => {
